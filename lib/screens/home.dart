@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:pawfiki/actions/change_bottom_nav_index_action.dart';
 import 'package:pawfiki/models/app_state.dart';
+import 'package:pawfiki/screens/general_feed.dart';
+import 'package:pawfiki/screens/new_post.dart';
+import 'package:pawfiki/screens/user_profile.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -28,39 +31,9 @@ class MyHomePage extends StatelessWidget {
           ),
           body:
               <Widget>[
-                Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'Welcome to the global feed!',
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
-                    ],
-                  ),
-                ),
-                Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'Welcome to the New Post page!',
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
-                    ],
-                  ),
-                ),
-                Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'Welcome to the Profile page!',
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
-                    ],
-                  ),
-                ),
+                const GeneralFeed(),
+                const NewPost(),
+                const UserProfile(),
               ][state.bottomNavigationBarIndex],
           bottomNavigationBar: NavigationBar(
             onDestinationSelected: (int index) {
