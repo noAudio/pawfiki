@@ -47,7 +47,15 @@ class NewPost extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(onPressed: () {}, child: Text("Save Draft")),
-                  TextButton(onPressed: () {}, child: Text("Post")),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll<Color>(
+                        Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                    child: Text("Post", style: TextStyle(color: Colors.white)),
+                  ),
                 ],
               ),
             ],
