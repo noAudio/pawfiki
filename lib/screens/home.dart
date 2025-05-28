@@ -23,24 +23,25 @@ class MyHomePage extends StatelessWidget {
               child: Text(
                 state.bottomNavigationBarIndex == 0
                     ? "General Feed"
-                    : state.bottomNavigationBarIndex == 1
-                    ? "Add Post"
                     : "User Profile",
               ),
             ),
           ),
-          floatingActionButton: FloatingActionButton.extended(
-            onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                builder: (context) {
-                  return const NewPost();
-                },
-              );
-            },
-            label: const Text('New Post'),
-            icon: Icon(Icons.edit_outlined),
-          ),
+          floatingActionButton:
+              state.bottomNavigationBarIndex == 0
+                  ? FloatingActionButton.extended(
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return const NewPost();
+                        },
+                      );
+                    },
+                    label: const Text('New Post'),
+                    icon: Icon(Icons.edit_outlined),
+                  )
+                  : null,
           body:
               <Widget>[
                 const GeneralFeed(),
@@ -59,7 +60,11 @@ class MyHomePage extends StatelessWidget {
                 label: "Feed",
               ),
               // NavigationDestination(icon: Icon(Icons.add), label: "New Post"),
-              NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
+              NavigationDestination(
+                selectedIcon: Icon(Icons.person),
+                icon: Icon(Icons.person_outlined),
+                label: "Profile",
+              ),
             ],
           ),
         );
