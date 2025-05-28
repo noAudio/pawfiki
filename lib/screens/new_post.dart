@@ -11,7 +11,7 @@ class NewPost extends StatelessWidget {
       converter: (store) => store.state,
       builder: (BuildContext context, state) {
         return Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.fromLTRB(10.0, 25.0, 10.0, 15.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
