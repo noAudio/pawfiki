@@ -29,10 +29,22 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
           ),
+          floatingActionButton: FloatingActionButton.extended(
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return const NewPost();
+                },
+              );
+            },
+            label: const Text('New Post'),
+            icon: Icon(Icons.edit_outlined),
+          ),
           body:
               <Widget>[
                 const GeneralFeed(),
-                const NewPost(),
+                // const NewPost(),
                 const UserProfile(),
               ][state.bottomNavigationBarIndex],
           bottomNavigationBar: NavigationBar(
@@ -46,7 +58,7 @@ class MyHomePage extends StatelessWidget {
                 icon: Icon(Icons.home_outlined),
                 label: "Feed",
               ),
-              NavigationDestination(icon: Icon(Icons.add), label: "New Post"),
+              // NavigationDestination(icon: Icon(Icons.add), label: "New Post"),
               NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
             ],
           ),
