@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:pawfiki/actions/change_bottom_nav_index_action.dart';
+import 'package:pawfiki/components/custom_fab.dart';
 import 'package:pawfiki/models/app_state.dart';
 import 'package:pawfiki/screens/general_feed.dart';
-import 'package:pawfiki/screens/new_post.dart';
+import 'package:pawfiki/screens/resources.dart';
 import 'package:pawfiki/screens/user_profile.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -28,24 +29,11 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           floatingActionButton:
-              state.bottomNavigationBarIndex == 0
-                  ? FloatingActionButton.extended(
-                    onPressed: () {
-                      showModalBottomSheet(
-                        context: context,
-                        builder: (context) {
-                          return const NewPost();
-                        },
-                      );
-                    },
-                    label: const Text('New Post'),
-                    icon: Icon(Icons.edit_outlined),
-                  )
-                  : null,
+              state.bottomNavigationBarIndex == 0 ? const CustomFab() : null,
           body:
               <Widget>[
                 const GeneralFeed(),
-                // const NewPost(),
+                const Resources(),
                 const UserProfile(),
               ][state.bottomNavigationBarIndex],
           bottomNavigationBar: NavigationBar(
@@ -59,7 +47,11 @@ class MyHomePage extends StatelessWidget {
                 icon: Icon(Icons.home_outlined),
                 label: "Feed",
               ),
-              // NavigationDestination(icon: Icon(Icons.add), label: "New Post"),
+              NavigationDestination(
+                selectedIcon: Icon(Icons.store),
+                icon: Icon(Icons.store_outlined),
+                label: "Resources",
+              ),
               NavigationDestination(
                 selectedIcon: Icon(Icons.person),
                 icon: Icon(Icons.person_outlined),
