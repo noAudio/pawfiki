@@ -23,8 +23,10 @@ class MyHomePage extends StatelessWidget {
             title: Center(
               child: Text(
                 state.bottomNavigationBarIndex == 0
-                    ? "General Feed"
-                    : "User Profile",
+                    ? "Home"
+                    : state.bottomNavigationBarIndex == 1
+                    ? "Resources"
+                    : "Profile",
               ),
             ),
           ),
