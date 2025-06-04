@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:pawfiki/models/app_state.dart';
+import 'package:pawfiki/models/post_tag_enum.dart';
 
-class NewPost extends StatelessWidget {
+class NewPost extends StatefulWidget {
   const NewPost({super.key});
 
+  @override
+  State<NewPost> createState() => _NewPostState();
+}
+
+class _NewPostState extends State<NewPost> {
+  List<PostTagEnum> tags = PostTagEnum.values;
+  late String dropdownValue = tags.first.name;
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, dynamic>(
@@ -23,6 +31,42 @@ class NewPost extends StatelessWidget {
                       border: InputBorder.none,
                     ),
                   ),
+                  Row(
+                    children: [
+                      Text("Post tag:"),
+                      SizedBox(width: 10),
+                      DropdownButton<String>(
+                        value: dropdownValue,
+                        items:
+                            tags.map<DropdownMenuItem<String>>((value) {
+                              return DropdownMenuItem(
+                                value: value.name,
+                                child: Text(
+                                  value.name,
+                                  style: TextStyle(
+                                    color:
+                                        value == PostTagEnum.update
+                                            ? Colors.blue
+                                            : value == PostTagEnum.request
+                                            ? Colors.green
+                                            : value == PostTagEnum.spotted
+                                            ? Colors.orange
+                                            : value == PostTagEnum.help
+                                            ? Colors.red
+                                            : Colors.black,
+                                  ),
+                                ),
+                              );
+                            }).toList(),
+                        onChanged: (String? value) {
+                          setState(() {
+                            dropdownValue = value!;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                  SizedBox(width: 5),
                   TextButton(
                     onPressed: () {},
                     child: Row(
