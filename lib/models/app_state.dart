@@ -3,20 +3,20 @@ import 'package:pawfiki/models/feed.dart';
 import 'package:pawfiki/models/user.dart';
 
 class AppState {
-  final User user;
+  final User? user;
   final ThemeMode appTheme;
   final Feed feed;
   final int bottomNavigationBarIndex;
 
   AppState({
-    required this.user,
+    this.user,
     required this.appTheme,
     required this.feed,
     required this.bottomNavigationBarIndex,
   });
 
   factory AppState.initial() => AppState(
-    user: User(username: ''),
+    user: null,
     appTheme: ThemeMode.system,
     feed: Feed(
       globalFeed: [
