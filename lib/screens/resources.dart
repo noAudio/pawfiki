@@ -23,6 +23,5 @@ class Resources extends StatelessWidget {
         );
       },
     );
-    ;
   }
 }
