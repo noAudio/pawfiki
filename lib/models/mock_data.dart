@@ -1,4 +1,5 @@
 import 'package:pawfiki/models/post_tag_enum.dart';
+import 'package:pawfiki/models/resource_type_enum.dart';
 
 List<Map<String, dynamic>> posts = [
   {
@@ -58,5 +59,89 @@ List<Map<String, dynamic>> posts = [
         "He won't eat anything unless it is drenched in the blood of my enemies. Is anyone's cat also like...",
     "postImageLink":
         "https://images.pexels.com/photos/10404485/pexels-photo-10404485.jpeg?auto=compress&cs=tinysrgb&w=600",
+  },
+];
+
+var resourceList = <Map<String, dynamic>>[
+  {
+    "name": "NFS",
+    "type": ResourceTypeEnum.shelter,
+    "resourceImage":
+        "https://petstore-foundation.granular.ke/wp-content/uploads/2024/07/NFS-740x740.png",
+    "phone": "0111302231",
+    "website": "https://www.thenairobifelinesanctuary.com",
+    "mapLink": "https://maps.app.goo.gl/TeBiJzUFVduTnCrt7",
+  },
+  {
+    "name": "KSPCA",
+    "type": ResourceTypeEnum.shelter,
+    "resourceImage":
+        "https://petstore-foundation.granular.ke/wp-content/uploads/2024/07/KSPCA-740x740.png",
+    "phone": "0733571125",
+    "website": "https://www.kspca.or.ke/",
+    "mapLink": "https://maps.app.goo.gl/ByPKgFasK9cFtbyv6",
+  },
+  {
+    "name": "KYFSA",
+    "type": ResourceTypeEnum.shelter,
+    "resourceImage":
+        "https://petstore-foundation.granular.ke/wp-content/uploads/2024/07/kibera-youth-for-stray-animals-740x740.png",
+    "phone": "0717497765",
+    "website": "https://kiberayouthforstrayanimals.org/",
+    "mapLink": "",
+  },
+  {
+    "name": "PetStore Kenya",
+    "type": ResourceTypeEnum.store,
+    "resourceImage":
+        "https://lh3.googleusercontent.com/p/AF1QipNCJvh8Xum5-LFIDF5N24YBL99WzhDuJNUqcuA2=s680-w680-h510-rw",
+    "phone": "0795350292",
+    "website":
+        "https://petstore.co.ke/?srsltid=AfmBOoqyCt6qOw8aSgsutFAvs7d0AIRZM7f-upYJr5gr3BSHOKxY9jTU",
+    "mapLink": "https://maps.app.goo.gl/W6uX4dGued6ngjA37",
+  },
+  {
+    "name": "Royal Pets Store",
+    "type": ResourceTypeEnum.store,
+    "resourceImage":
+        "https://theroyalpets.com/wp-content/uploads/223147bd-6d5c-46f1-a067-f680843e8847.jpg",
+    "phone": "+254110064555",
+    "website": "https://theroyalpets.com/",
+    "mapLink": "https://maps.app.goo.gl/nD3h3Sk5EHroNUBe6",
+  },
+  {
+    "name": "Aquapet Store",
+    "type": ResourceTypeEnum.store,
+    "resourceImage":
+        "https://aquapet.co.ke/wp-content/uploads/2024/08/Frame-25-1-1.png",
+    "phone": "0717859249",
+    "website": "https://aquapet.co.ke/",
+    "mapLink": "https://maps.app.goo.gl/jAJ9AATcQNALTuxa7",
+  },
+  {
+    "name": "Noble Veterinary",
+    "type": ResourceTypeEnum.veterinary,
+    "resourceImage": "https://i.ytimg.com/vi/N6fWoXh_dNA/maxresdefault.jpg",
+    "phone": "0722657719",
+    "website": "https://thenoblevet.com/",
+    "mapLink": "https://maps.app.goo.gl/dd2SNTcv3xpb2of4A",
+  },
+  {
+    "name": "Mobivet Clinic",
+    "type": ResourceTypeEnum.veterinary,
+    "resourceImage":
+        "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://mobivetclinic.co.ke/wp-content/uploads/2023/06/logo.png",
+    "phone": "0727333722",
+    "website": "https://mobivetclinic.co.ke/",
+    "mapLink": "https://maps.app.goo.gl/3X2vw1u4NgAqc4wS6",
+  },
+  {
+    "name": "Petwell Veterinary",
+    "type": ResourceTypeEnum.veterinary,
+    "resourceImage":
+        "https://keonline.eu-central-1.linodeobjects.com/uploads/logo/Axpr4zJlrQ8d1jzUBg9DvadFIX9ekS9Dx2mdEfWm.png",
+    "phone": "0748080080",
+    "website": "https://petwellvetclinic.com/",
+    "mapLink": "https://maps.app.goo.gl/BCMvWoKevJ3vXMYb6",
   },
 ];
