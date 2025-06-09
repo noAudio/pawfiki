@@ -5,6 +5,7 @@ import 'package:pawfiki/components/custom_fab.dart';
 import 'package:pawfiki/models/app_state.dart';
 import 'package:pawfiki/screens/general_feed.dart';
 import 'package:pawfiki/screens/resources.dart';
+import 'package:pawfiki/screens/user_auth_screen.dart';
 import 'package:pawfiki/screens/user_profile.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -17,7 +18,7 @@ class MyHomePage extends StatelessWidget {
       builder: (context, store) {
         AppState state = store.state;
 
-        return Scaffold(
+        return state.user == null ? const UserAuthScreen() : Scaffold(
           appBar: AppBar(
             title: Center(
               child: Text(
