@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:pawfiki/actions/change_login_state_action.dart';
+import 'package:pawfiki/actions/index.dart';
 import 'package:pawfiki/models/app_state.dart';
 import 'package:pawfiki/models/login_state_enum.dart';
+import 'package:pawfiki/models/user.dart';
 
 class LoginComponent extends StatelessWidget {
   const LoginComponent({super.key});
@@ -31,7 +32,11 @@ class LoginComponent extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: FilledButton(
-                onPressed: () {},
+                onPressed: () {
+                  store.dispatch(
+                    SetUserAction(user: User(username: "username")),
+                  );
+                },
                 style: FilledButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
