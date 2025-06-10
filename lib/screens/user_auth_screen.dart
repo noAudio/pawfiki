@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:pawfiki/components/login_component.dart';
+import 'package:pawfiki/components/sign_up_component.dart';
 import 'package:pawfiki/models/app_state.dart';
+import 'package:pawfiki/models/login_state_enum.dart';
 
 class UserAuthScreen extends StatelessWidget {
   const UserAuthScreen({super.key});
@@ -12,13 +15,21 @@ class UserAuthScreen extends StatelessWidget {
       builder: (context, store) {
         AppState state = store.state;
 
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-          //   TODO: Swap with Logo
-            const Text("PAWFIKI LOGO"),
-          //   
-          ],
+        return Scaffold(
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child:
+                      state.loginState == LoginStateEnum.signIn
+                          ? const LoginComponent()
+                          : const SignUpComponent(),
+                ),
+              ],
+            ),
+          ),
         );
       },
     );
