@@ -60,22 +60,6 @@ class UserProfile extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Row(
-                        children: [
-                          Text("Password"),
-                          SizedBox(width: 10),
-                          Expanded(
-                            child: TextFormField(
-                              readOnly: true,
-                              obscureText: true,
-                              initialValue: "password",
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
                     ],
                   ),
                 ),
