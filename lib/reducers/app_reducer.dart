@@ -8,6 +8,10 @@ AppState appReducer(AppState state, dynamic action) {
     return state.copyWith(loginState: action.loginStateEnum);
   } else if (action is ChangeTermsAccepted) {
     return state.copyWith(isTermsAccepted: action.isTermsAccepted);
+  } else if (action is SetUserAction) {
+    return state.copyWith(user: action.user);
+  } else if (action is ResetStateAction) {
+    return AppState.initial();
   }
   return state;
 }
