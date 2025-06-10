@@ -9,6 +9,7 @@ class AppState {
   final Feed feed;
   final int bottomNavigationBarIndex;
   final LoginStateEnum loginState;
+  final bool isTermsAccepted;
 
   AppState({
     this.user,
@@ -16,6 +17,7 @@ class AppState {
     required this.feed,
     required this.bottomNavigationBarIndex,
     required this.loginState,
+    required this.isTermsAccepted,
   });
 
   factory AppState.initial() => AppState(
@@ -28,6 +30,7 @@ class AppState {
     ),
     bottomNavigationBarIndex: 0,
     loginState: LoginStateEnum.signIn,
+    isTermsAccepted: false,
   );
 
   AppState copyWith({
@@ -36,6 +39,7 @@ class AppState {
     Feed? feed,
     int? bottomNavigationBarIndex,
     LoginStateEnum? loginState,
+    bool? isTermsAccepted,
   }) {
     return AppState(
       user: user ?? this.user,
@@ -44,6 +48,7 @@ class AppState {
       bottomNavigationBarIndex:
           bottomNavigationBarIndex ?? this.bottomNavigationBarIndex,
       loginState: loginState ?? this.loginState,
+      isTermsAccepted: isTermsAccepted ?? this.isTermsAccepted,
     );
   }
 }
