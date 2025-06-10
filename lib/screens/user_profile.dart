@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:pawfiki/actions/index.dart';
 import 'package:pawfiki/models/app_state.dart';
 
 class UserProfile extends StatelessWidget {
@@ -8,8 +9,8 @@ class UserProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, dynamic>(
-      converter: (store) => store.state,
-      builder: (BuildContext context, state) {
+      converter: (store) => store,
+      builder: (BuildContext context, store) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -138,7 +139,7 @@ class UserProfile extends StatelessWidget {
               splashColor: Theme.of(context).colorScheme.error,
               // hoverColor: Theme.of(context).colorScheme.error,
               onTap: () {
-                // TODO: Navigate to Log In screen
+                store.dispatch(ResetStateAction());
               },
               child: Padding(
                 padding: EdgeInsets.all(18.0),
