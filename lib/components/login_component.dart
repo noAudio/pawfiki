@@ -33,8 +33,15 @@ class LoginComponent extends StatelessWidget {
               width: double.infinity,
               child: FilledButton(
                 onPressed: () {
+                  // TODO: Swap to API call
                   store.dispatch(
-                    SetUserAction(user: User(username: "username")),
+                    SetUserAction(
+                      user: User(
+                        username: "username",
+                        email: "user@email.com",
+                        password: "qwertyuiop",
+                      ),
+                    ),
                   );
                 },
                 style: FilledButton.styleFrom(
