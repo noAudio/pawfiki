@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:pawfiki/actions/index.dart';
+import 'package:pawfiki/components/primary_button.dart';
+import 'package:pawfiki/components/secondary_button.dart';
+import 'package:pawfiki/components/text_input.dart';
 import 'package:pawfiki/models/app_state.dart';
 import 'package:pawfiki/models/login_state_enum.dart';
 import 'package:pawfiki/models/user.dart';
@@ -18,57 +21,30 @@ class LoginComponent extends StatelessWidget {
           children: [
             const Text("PAWFIKI LOGO"),
             const Text("Sign in with your details"),
-            Padding(
-              padding: const EdgeInsets.only(top: 10, bottom: 10),
-              child: TextField(decoration: InputDecoration(hintText: "Email")),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10, bottom: 10),
-              child: TextField(
-                decoration: InputDecoration(hintText: "Password"),
-                obscureText: true,
-              ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: FilledButton(
-                onPressed: () {
-                  // TODO: Swap to API call
-                  store.dispatch(
-                    SetUserAction(
-                      user: User(
-                        username: "username",
-                        email: "user@email.com",
-                        password: "qwertyuiop",
-                      ),
+            const TextInput(hintText: "Email"),
+            const TextInput(hintText: "Password", isObscured: true),
+            PrimaryButton(
+              value: "Sign in",
+              onPressed: () {
+                // TODO: Swap to API call
+                store.dispatch(
+                  SetUserAction(
+                    user: User(
+                      username: "username",
+                      email: "user@email.com",
+                      password: "qwertyuiop",
                     ),
-                  );
-                },
-                style: FilledButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
                   ),
-                ),
-                child: Text("Sign in"),
-              ),
+                );
+              },
             ),
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedButton(
-                onPressed: () {
-                  store.dispatch(
-                    ChangeLoginStateAction(
-                      loginStateEnum: LoginStateEnum.signUp,
-                    ),
-                  );
-                },
-                style: OutlinedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-                child: Text("Create account"),
-              ),
+            SecondaryButton(
+              value: "Create account",
+              onPressed: () {
+                store.dispatch(
+                  ChangeLoginStateAction(loginStateEnum: LoginStateEnum.signUp),
+                );
+              },
             ),
           ],
         );

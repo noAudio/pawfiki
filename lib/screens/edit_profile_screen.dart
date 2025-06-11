@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:pawfiki/components/text_input.dart';
 import 'package:pawfiki/models/app_state.dart';
 
 class EditProfileScreen extends StatelessWidget {
@@ -20,19 +21,9 @@ class EditProfileScreen extends StatelessWidget {
                 Text("Email, username and password"),
                 Column(
                   children: [
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: state.user!.username,
-                      ),
-                    ),
-                    TextField(
-                      decoration: InputDecoration(hintText: state.user!.email),
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: state.user!.password,
-                      ),
-                    ),
+                    TextInput(hintText: state.user!.username),
+                    TextInput(hintText: state.user!.email),
+                    TextInput(hintText: "New password", isObscured: true),
                   ],
                 ),
               ],
