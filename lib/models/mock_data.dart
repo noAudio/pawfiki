@@ -10,7 +10,7 @@ List<Map<String, dynamic>> posts = [
     "userName": "@andreaP",
     "postTitle": "Fluffy is settling in perfectly 😊",
     "postBodyPreview":
-        "A few weeks ago I posted about a stray cat who kept coming to my door. I took her in and...",
+        "A few weeks ago I posted about a stray cat who kept coming to my door. I took her in and gave her some food and water. She was afraid at first and always hissing but in the end she realised I was here to help and calmed down 🥰. What do you think I should call her? I can't seem to decide!",
     "postImageLink":
         "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
@@ -22,7 +22,7 @@ List<Map<String, dynamic>> posts = [
     "userName": "@eliud",
     "postTitle": "Spotted in Roysambu",
     "postBodyPreview":
-        "Found a mama cat in Roysambu near TRM with two kittens. Not sure if they are strays. Anybody recognise...",
+        "Found a mama cat in Roysambu near TRM with two kittens. Not sure if they are strays. Anybody recognise her? If so please call me at 0712345678. Lets get her a proper home!",
     "postImageLink":
         "https://images.pexels.com/photos/1416792/pexels-photo-1416792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
@@ -45,7 +45,7 @@ List<Map<String, dynamic>> posts = [
     "userName": "@eben",
     "postTitle": "Need to rehome my cat",
     "postBodyPreview":
-        "Unfortunately I have cancer and 10 minutes left to live. Would somebody please take in my cat 😢...",
+        "Unfortunately I have cancer and 10 minutes left to live. Would somebody please take in my cat 😢. Is he a pain in the ass? Yes. But on the upside he is very cuddly and very disciplined when it comes to food.",
     "postImageLink": "",
   },
   {
@@ -56,7 +56,7 @@ List<Map<String, dynamic>> posts = [
     "userName": "@iheartcats",
     "postTitle": "My kitten is such  a picky eater!",
     "postBodyPreview":
-        "He won't eat anything unless it is drenched in the blood of my enemies. Is anyone's cat also like...",
+        "He won't eat anything unless it is drenched in the blood of my enemies. Is anyone's cat also like this? I think I am almost out of enemies at this point plus it won't help him if I end up in prison. Any suggestions?",
     "postImageLink":
         "https://images.pexels.com/photos/10404485/pexels-photo-10404485.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
