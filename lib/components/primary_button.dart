@@ -4,12 +4,8 @@ import 'package:pawfiki/models/app_state.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String value;
-  final VoidCallback onPressed;
-  const PrimaryButton({
-    super.key,
-    required this.value,
-    required this.onPressed,
-  });
+  final VoidCallback? onPressed;
+  const PrimaryButton({super.key, required this.value, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
