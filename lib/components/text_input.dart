@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class TextBox extends StatelessWidget {
+class TextInput extends StatelessWidget {
   final String hintText;
   final bool? isObscured;
-  const TextBox({super.key, required this.hintText, this.isObscured});
+  const TextInput({super.key, required this.hintText, this.isObscured});
 
   @override
   Widget build(BuildContext context) {
