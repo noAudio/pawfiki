@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pawfiki/components/post.dart';
 import 'package:pawfiki/models/feed.dart';
 import 'package:pawfiki/models/login_state_enum.dart';
 import 'package:pawfiki/models/user.dart';
@@ -10,6 +11,7 @@ class AppState {
   final int bottomNavigationBarIndex;
   final LoginStateEnum loginState;
   final bool isTermsAccepted;
+  List<Post> userPosts;
 
   AppState({
     this.user,
@@ -18,6 +20,7 @@ class AppState {
     required this.bottomNavigationBarIndex,
     required this.loginState,
     required this.isTermsAccepted,
+    required this.userPosts,
   });
 
   factory AppState.initial() => AppState(
@@ -31,6 +34,7 @@ class AppState {
     bottomNavigationBarIndex: 0,
     loginState: LoginStateEnum.signIn,
     isTermsAccepted: false,
+    userPosts: [],
   );
 
   AppState copyWith({
@@ -40,6 +44,7 @@ class AppState {
     int? bottomNavigationBarIndex,
     LoginStateEnum? loginState,
     bool? isTermsAccepted,
+    List<Post>? userPosts,
   }) {
     return AppState(
       user: user ?? this.user,
@@ -49,6 +54,7 @@ class AppState {
           bottomNavigationBarIndex ?? this.bottomNavigationBarIndex,
       loginState: loginState ?? this.loginState,
       isTermsAccepted: isTermsAccepted ?? this.isTermsAccepted,
+      userPosts: userPosts ?? this.userPosts,
     );
   }
 }
