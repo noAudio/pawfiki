@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:pawfiki/actions/index.dart';
 import 'package:pawfiki/models/app_state.dart';
+import 'package:pawfiki/screens/edit_profile_screen.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
@@ -69,6 +70,12 @@ class UserProfile extends StatelessWidget {
                   hoverColor: Theme.of(context).colorScheme.primary,
                   onTap: () {
                     // TODO: Navigate to Edit Profile Screen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const EditProfileScreen(),
+                      ),
+                    );
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(18.0),
