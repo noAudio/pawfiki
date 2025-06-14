@@ -90,7 +90,6 @@ class _NewPostState extends State<NewPost> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  TextButton(onPressed: () {}, child: Text("Save Draft")),
                   ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
