@@ -1,3 +1,4 @@
+import 'package:pawfiki/models/comment_details.dart';
 import 'package:pawfiki/models/post_tag_enum.dart';
 
 class PostDetails {
@@ -8,6 +9,7 @@ class PostDetails {
   String postTitle;
   String postBodyPreview;
   String postBody;
+  List<CommentDetails> comments;
   String? postImageLink;
 
   PostDetails({
@@ -18,6 +20,7 @@ class PostDetails {
     required this.postTitle,
     required this.postBodyPreview,
     required this.postBody,
+    required this.comments,
     this.postImageLink,
   });
 }
