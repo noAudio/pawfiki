@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:pawfiki/actions/index.dart';
 import 'package:pawfiki/models/app_state.dart';
+import 'package:pawfiki/screens/comment_replies_screen.dart';
 import 'package:pawfiki/screens/edit_profile_screen.dart';
 import 'package:pawfiki/screens/user_posts_screen.dart';
 
@@ -126,7 +127,12 @@ class UserProfile extends StatelessWidget {
                   splashColor: Theme.of(context).colorScheme.primary,
                   hoverColor: Theme.of(context).colorScheme.primary,
                   onTap: () {
-                    // TODO: Navigate to Replies screen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CommentRepliesScreen(),
+                      ),
+                    );
                   },
                   child: Padding(
                     padding: EdgeInsets.all(18.0),
