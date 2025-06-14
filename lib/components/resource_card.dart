@@ -48,17 +48,23 @@ class ResourceCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          //   TODO: Launch dialler with contact
+                        },
                         icon: Icon(Icons.phone),
                         tooltip: phone,
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          //   TODO: Launch default browser with website as target
+                        },
                         icon: Icon(Icons.public),
                         tooltip: websiteLink,
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          //   TODO: Launch default maps app with destination
+                        },
                         icon: Icon(Icons.pin_drop),
                         tooltip: mapLink,
                       ),
