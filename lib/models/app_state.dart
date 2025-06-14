@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pawfiki/components/post.dart';
+import 'package:pawfiki/models/comment_details.dart';
 import 'package:pawfiki/models/feed.dart';
 import 'package:pawfiki/models/login_state_enum.dart';
+import 'package:pawfiki/models/post_details.dart';
 import 'package:pawfiki/models/user.dart';
 
 class AppState {
@@ -11,7 +12,8 @@ class AppState {
   final int bottomNavigationBarIndex;
   final LoginStateEnum loginState;
   final bool isTermsAccepted;
-  List<Post> userPosts;
+  final List<PostDetails> userPosts;
+  final List<CommentDetails> commentReplies;
 
   AppState({
     this.user,
@@ -21,6 +23,7 @@ class AppState {
     required this.loginState,
     required this.isTermsAccepted,
     required this.userPosts,
+    required this.commentReplies,
   });
 
   factory AppState.initial() => AppState(
@@ -35,6 +38,7 @@ class AppState {
     loginState: LoginStateEnum.signIn,
     isTermsAccepted: false,
     userPosts: [],
+    commentReplies: [],
   );
 
   AppState copyWith({
@@ -44,7 +48,8 @@ class AppState {
     int? bottomNavigationBarIndex,
     LoginStateEnum? loginState,
     bool? isTermsAccepted,
-    List<Post>? userPosts,
+    List<PostDetails>? userPosts,
+    List<CommentDetails>? commentReplies,
   }) {
     return AppState(
       user: user ?? this.user,
@@ -55,6 +60,7 @@ class AppState {
       loginState: loginState ?? this.loginState,
       isTermsAccepted: isTermsAccepted ?? this.isTermsAccepted,
       userPosts: userPosts ?? this.userPosts,
+      commentReplies: commentReplies ?? this.commentReplies,
     );
   }
 }
