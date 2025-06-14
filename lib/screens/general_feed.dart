@@ -25,6 +25,7 @@ class GeneralFeed extends StatelessWidget {
                 postTitle: posts[index]["postTitle"],
                 postBodyPreview: posts[index]["postBodyPreview"],
                 postBody: posts[index]["postBodyPreview"],
+                comments: [],
                 postImageLink:
                     posts[index]["postImageLink"] != ""
                         ? posts[index]["postImageLink"]
