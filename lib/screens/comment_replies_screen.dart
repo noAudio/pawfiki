@@ -11,17 +11,21 @@ class CommentRepliesScreen extends StatelessWidget {
       converter: (store) => store,
       builder: (BuildContext context, store) {
         AppState state = store.state;
-        return state.commentReplies.isNotEmpty
-            ? Column()
-            : Padding(
-              padding: const EdgeInsets.all(20),
-              child: Center(
-                child: const Text(
-                  "You have no comment replies yet! 😸",
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-            );
+        return Scaffold(
+          appBar: AppBar(title: const Text("Comment replies")),
+          body:
+              state.commentReplies.isNotEmpty
+                  ? Column()
+                  : Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Center(
+                      child: const Text(
+                        "You have no comment replies yet! 😸",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                  ),
+        );
       },
     );
   }
